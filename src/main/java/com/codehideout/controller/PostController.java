@@ -14,9 +14,12 @@ public class PostController {
 
     @GetMapping("/posts")
     public String postList(Model model) {
-
         model.addAttribute("posts", postService.findAll());
-
         return "post/list";
+    }
+
+    @GetMapping("/posts/new")
+    public String postForm() {
+        return "post/form";
     }
 }
